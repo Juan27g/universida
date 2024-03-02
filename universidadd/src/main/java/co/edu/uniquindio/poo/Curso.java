@@ -10,6 +10,7 @@ public class Curso{
     private final Collection<Estudiante> ListaEstudiante;
 
     public Curso(String nombre){
+        assert nombre != null : "El nombre no puede ser nulo";
         this.nombre = nombre;
         this.ListaEstudiante = new LinkedList<Estudiante>();
     }
