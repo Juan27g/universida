@@ -23,8 +23,7 @@ public class Curso{
     }
 
     public void registrarEstudiante(Estudiante estudiante) {
-    assert verificarNumeroIdentificacion(estudiante.numeroIdentificacion())==false:
-    "Ya existe un estudiante con ese número de identificación"+estudiante.numeroIdentificacion();
+    assert verificarNumeroIdentificacion(estudiante.numeroIdentificacion())==false: "Ya existe un estudiante con ese número de identificación"+estudiante.numeroIdentificacion();
         ListaEstudiante.add(estudiante);
     }
     private boolean verificarNumeroIdentificacion(String numeroIdentificacionBuscar) {
@@ -35,5 +34,6 @@ public class Curso{
                 existeEstudiante = true;
             }
         }
+        return existeEstudiante;
     }
 }
