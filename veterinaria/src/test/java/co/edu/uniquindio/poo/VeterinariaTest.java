@@ -52,7 +52,7 @@ public class VeterinariaTest {
      * Prueba ID repetida
      */
     @Test
-    public void agregarEstudianteRepetido() {
+    public void agregarMascotaRepetido() {
         LOG.info("Inicio ID repetida");
         var veterinaria = new Veterinaria("Amigos Peludos");
         var mascota1 = new Mascota("Maximiliano","1159", "Canino", "Frespuder", (byte)11, "Masculino", "Dorado", 12.5 );
