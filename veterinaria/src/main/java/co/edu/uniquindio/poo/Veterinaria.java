@@ -14,7 +14,7 @@ public class Veterinaria {
     public Veterinaria(String nombre) {
         assert nombre != null : "El nombre de la mascota no puede ser nulo";
         this.nombre = nombre;
-        this.ListaMascotas = new LinkedList<Mascota>();
+        this.ListaMascotas = new LinkedList<>();
     }
 
     public String getNombre() {

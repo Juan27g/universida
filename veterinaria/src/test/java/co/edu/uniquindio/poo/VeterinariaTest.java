@@ -30,6 +30,9 @@ public class VeterinariaTest {
         var mascota = new Mascota("Maximiliano","1159", "Canino", "Frespuder", (byte)7, "Masculino", "Dorado", 12.5 );
         veterinaria.registrarMascota(mascota);
         assertEquals(1, veterinaria.getListaMascotas().size());
+        
+
+
 
         LOG.info("Finalizado prueba agregar una mascota");
     }
@@ -41,9 +44,7 @@ public class VeterinariaTest {
     @Test
     public void VeterinariaNula() {
         LOG.info("Inicio datos nulos veterinaria");
-
         assertThrows(Throwable.class, () -> new Veterinaria(null));
-
         LOG.info("Finalizado datos nulos veterinaria");
     }
 
@@ -56,7 +57,7 @@ public class VeterinariaTest {
         LOG.info("Inicio ID repetida");
         var veterinaria = new Veterinaria("Amigos Peludos");
         var mascota1 = new Mascota("Maximiliano","1159", "Canino", "Frespuder", (byte)11, "Masculino", "Dorado", 12.5 );
-        var mascota2 = new Mascota("Wosito","1066", "Canino", "Frespuder", (byte)7, "Masculino", "Blanco", 19.5 );
+        var mascota2 = new Mascota("Wosito","1159", "Canino", "Frespuder", (byte)7, "Masculino", "Blanco", 19.5 );
         veterinaria.registrarMascota(mascota1);
         assertThrows(Throwable.class, () -> veterinaria.registrarMascota(mascota2));
         LOG.info("Finalizado ID repetida");
