@@ -5,25 +5,30 @@ import java.util.Collection;
 import javafx.scene.paint.Material;
 
 public class Zona {
-    public String nombre;
-    private final Collection<FiguraGeometrica> figuraGeometrica;
-    private Material material;
+    private final String nombre;
+    private final FiguraGeometrica figuraGeometrica;
+    private final Material material;
 
-    public Zona(String nombre, Collection<FiguraGeometrica> figuraGeometrica, Material mateorial) {
+    public Zona(String nombre, FiguraGeometrica figuraGeometrica, Material material) {
         this.nombre = nombre;
-        this.figuraGeometrica = figuraGeometrica;
-        this.material = mateorial;
+        this.figuraGeometrica= figuraGeometrica;
+        this.material = material;
     }
     
 
     public String getNombre() {
         return nombre;
     }
-    public Collection<FiguraGeometrica> getFiguraGeometrica() {
+
+    public FiguraGeometrica getFiguraGeometrica() {
         return figuraGeometrica;
     }
-    public Material getMateorial() {
+    public Material getMaterial() {
         return material;
+    }
+
+    public double calcularValor() {
+        return figuraGeometrica.calcularArea() * material.getValorMetroCuadrado();
     }
 
     

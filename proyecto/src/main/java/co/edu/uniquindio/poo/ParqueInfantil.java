@@ -2,20 +2,21 @@ package co.edu.uniquindio.poo;
 
 import java.util.Collection;
 import java.util.LinkedList;
-
 import javafx.print.Collation;
 
 public class ParqueInfantil {
     public String nombre;
     public String descripcion;
+    private final Municipio municipio;
     public Collection<Zona> zonas;
 
 
-    public ParqueInfantil(String nombre, String descripcion) {
+    public ParqueInfantil(String nombre, String descripcion, Municipio municipio) {
         this.nombre = nombre;
         assert nombre != null && !nombre.isBlank() : "El nombre debe ser diferente de null";
         this.descripcion = descripcion;
-        zonas = new LinkedList<>();
+        this.municipio= municipio;
+        this.zonas = new LinkedList<>();
     }
 
     public boolean verificarRepetido( String nombre){
@@ -26,10 +27,15 @@ public class ParqueInfantil {
         }
         return existe;
     }
+    
 
     public void agregarZona( Zona zona){
         assert verificarRepetido(zona.getNombre())==false;
         zonas.add(zona);
+    }
+
+    public double calcularValor() {
+        return zonas.stream().mapToDouble(n -> n.calcularValor()).sum() + municipio.getSobrecosto();
     }
 
 
@@ -43,10 +49,12 @@ public class ParqueInfantil {
         return descripcion;
     }
 
-
-    public Collection<Zona> getZonas() {
-        return zonas;
+    public Municipio getMunicipio() {
+        return municipio;
     }
+
+
+
 
 
 

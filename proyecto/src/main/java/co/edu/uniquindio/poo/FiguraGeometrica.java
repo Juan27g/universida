@@ -1,8 +1,5 @@
 package co.edu.uniquindio.poo;
-
-public class FiguraGeometrica {
-    public double calcularArea() {
-        return 0.0;
-    }
+public abstract class FiguraGeometrica {
+    public abstract double calcularArea();
 
 }
