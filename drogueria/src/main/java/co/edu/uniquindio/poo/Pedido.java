@@ -16,6 +16,7 @@ public class Pedido {
         assert cantidad<productoPedido.getStock():"No hay la cantidad suficiente en stock";   
     }
     
+    
     public LocalDate getFecha() {
         return fecha;
     }

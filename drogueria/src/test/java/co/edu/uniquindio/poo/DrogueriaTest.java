@@ -8,6 +8,7 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -33,7 +34,7 @@ public class DrogueriaTest {
         Collection<Producto> productos= new LinkedList<>();
         Gerente gerente= new Gerente("Samuel", "Torres", "302350", "calle 27", "3023500889", 100000);
         
-        assertThrows(Throwable.class,()-> gerente.agregarProducto(drogueria, productos, new Medicamento("gtlt", "xanax", "Tomar todos los días", 500, 0, "Tatiana", 0.75)));
+        assertThrows(Throwable.class,()-> drogueria.agregarProducto(new Medicamento("gtlt", "xanax", "Tomar todos los días", 500, 0, "Tatiana", 0.75)));
         
         LOG.info("Finalizando test sin stock");
     }
@@ -48,18 +49,18 @@ public class DrogueriaTest {
         Collection<Producto> productos= new LinkedList<>();
         Gerente gerente= new Gerente("Samuel", "Torres", "302350", "calle 27", "3023500889", 100000);
 
-        Medicamento medicamento=  new Medicamento("gtlt", "xanax", "Tomar todos los días", 500, 50, "Tatiana", 0.75);
+        Medicamento medicamento=  new Medicamento("gtlt", "loratadina", "Tomar todos los días", 500, 50, "Tatiana", 0.75);
         Hogar hogar= new Hogar("abcd", "Faboloso", "El propio", 2000, 150, "Tatiana", "No consumir");
         CuidadoPersonal cuidadoPersonal = new CuidadoPersonal("sdlt", "Pasta dental", "usar diario", 5500, 1100, "tatiana", "Fluor");
 
  
-        gerente.agregarProducto(drogueria, productos, medicamento);
-        gerente.agregarProducto(drogueria, productos, hogar);
-        gerente.agregarProducto(drogueria, productos, cuidadoPersonal);
+        drogueria.agregarProducto(medicamento);
+        drogueria.agregarProducto(hogar);
+        drogueria.agregarProducto(cuidadoPersonal);
 
-        Collection<Producto> productosMayorCien = drogueria.getStockMayorCien();
+        Collection<Producto> productosMayorCien = List.of(hogar, cuidadoPersonal);
 
-        assertEquals(0, productosMayorCien.size());
+assertIterableEquals(drogueria.getStockMayorCien(), productosMayorCien);
 
         LOG.info("Finalizando test de productos con stock mayor a 100");
     }

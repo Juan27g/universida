@@ -29,12 +29,15 @@ public class Drogueria {
         return listaMayorCien;
     }
 
+    public void agregarProducto(Producto producto) {
+        assert producto != null;
+        productos.add(producto);
+    }
+    public void eliminarProducto(Producto producto) {
+        productos.remove(producto);
+    }
+
     
-
-
-
-
-
 
     public String getNombre() {
         return nombre;
