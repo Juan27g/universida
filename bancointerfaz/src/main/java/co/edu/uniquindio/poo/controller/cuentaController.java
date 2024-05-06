@@ -39,8 +39,7 @@ public class cuentaController {
 
     @FXML
     void crearCuenta(ActionEvent event) {
-        System.out.println("La cuenta ha sido creada");
-
+        System.out.println("La cuenta ha sido creada.");
 
     }
     @FXML
