@@ -40,7 +40,7 @@ public class CarroTest {
         // Configuramos una tarifa por hora válida
         Carro.setTarifaPorHora(15.0);
         // Verificamos que la tarifa por hora obtenida sea la misma que configuramos
-        assertEquals(15.0, carro.getTarifaPorHora(), 0.0);
+        assertEquals(15.0, carro.getTarifaPorHoraVehiculo(), 0.0);
 
         LOG.info("Finalizando Test");
     }
