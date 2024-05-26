@@ -174,8 +174,6 @@ public class App extends JFrame {
     private void liberarPuesto() {
         int i = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la fila del puesto:"));
         int j = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese la columna del puesto:"));
-        int horasEstacionado = Integer.parseInt(JOptionPane.showInputDialog(this, "Ingrese las horas estacionado:"));
-
         parqueadero.liberarPuesto(i, j);
         outputArea.append("Puesto liberado en [" + i + ", " + j + "]\n");
         totalRecaudadoLabel.setText("Total Recaudado: " + parqueadero.getTotalRecaudadoDiario());
