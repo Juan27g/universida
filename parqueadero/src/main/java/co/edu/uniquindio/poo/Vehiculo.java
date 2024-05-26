@@ -1,19 +1,25 @@
 package co.edu.uniquindio.poo;
 
 /**
- * Clase abstracta que representa un vehículo.
+ * La clase abstracta Vehiculo representa un vehículo genérico.
+ * Contiene información básica como la placa, el modelo y el propietario del vehículo.
+ * Esta clase debe ser extendida por tipos específicos de vehículos, que deben implementar el método abstracto getTarifaPorHora().
  */
 public abstract class Vehiculo {
-    protected String placa;
-    protected String modelo;
-    protected Propietario propietario;
+
+    // Placa del vehículo.
+    private final String placa;
+    // Modelo del vehículo.
+    private final String modelo;
+    // Propietario del vehículo.
+    private final Propietario propietario;
 
     /**
      * Constructor de la clase Vehiculo.
      *
-     * @param placa      La placa del vehículo.
-     * @param modelo     El modelo del vehículo.
-     * @param propietario El propietario del vehículo.
+     * @param placa Placa del vehículo.
+     * @param modelo Modelo del vehículo.
+     * @param propietario Propietario del vehículo.
      */
     public Vehiculo(String placa, String modelo, Propietario propietario) {
         this.placa = placa;
@@ -48,10 +54,7 @@ public abstract class Vehiculo {
         return propietario;
     }
 
-    /**
-     * Obtiene la tarifa por hora del vehículo.
-     *
-     * @return La tarifa por hora.
-     */
-    public abstract double getTarifaPorHora();
+    public abstract double getTarifaPorHoraVehiculo();
 }
+
+ 

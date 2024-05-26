@@ -1,47 +1,54 @@
 package co.edu.uniquindio.poo;
 
 /**
- * Clase que representa un puesto en el parqueadero.
+ * La clase Puesto representa un puesto de estacionamiento en el parqueadero.
+ * Contiene la información de la ubicación del puesto y el vehículo que lo ocupa, si es el caso.
  */
 public class Puesto {
+    // Coordenada i (fila) del puesto en la matriz del parqueadero.
     private int i;
+    // Coordenada j (columna) del puesto en la matriz del parqueadero.
     private int j;
+    // Vehículo que ocupa el puesto, si está ocupado.
     private Vehiculo vehiculo;
 
     /**
      * Constructor de la clase Puesto.
      *
-     * @param i La fila del puesto.
-     * @param j La columna del puesto.
+     * @param i Coordenada i (fila) del puesto.
+     * @param j Coordenada j (columna) del puesto.
      */
     public Puesto(int i, int j) {
+        assert i >= 0 : "La coordenada i debe ser mayor o igual a cero";
+        assert j >= 0 : "La coordenada j debe ser mayor o igual a cero";
+        
         this.i = i;
         this.j = j;
         this.vehiculo = null;
     }
 
     /**
-     * Obtiene la fila del puesto.
+     * Obtiene la coordenada i (fila) del puesto.
      *
-     * @return La fila del puesto.
+     * @return La coordenada i del puesto.
      */
     public int getI() {
         return i;
     }
 
     /**
-     * Obtiene la columna del puesto.
+     * Obtiene la coordenada j (columna) del puesto.
      *
-     * @return La columna del puesto.
+     * @return La coordenada j del puesto.
      */
     public int getJ() {
         return j;
     }
 
     /**
-     * Verifica si el puesto está ocupado.
+     * Verifica si el puesto está ocupado por un vehículo.
      *
-     * @return True si el puesto está ocupado, false en caso contrario.
+     * @return true si el puesto está ocupado, false en caso contrario.
      */
     public boolean estaOcupado() {
         return vehiculo != null;
@@ -50,14 +57,14 @@ public class Puesto {
     /**
      * Ocupa el puesto con un vehículo.
      *
-     * @param vehiculo El vehículo que ocupará el puesto.
+     * @param vehiculo Vehículo que ocupará el puesto.
      */
     public void ocuparPuesto(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
 
     /**
-     * Libera el puesto.
+     * Libera el puesto, dejándolo vacío.
      */
     public void liberarPuesto() {
         this.vehiculo = null;
@@ -66,10 +73,9 @@ public class Puesto {
     /**
      * Obtiene el vehículo que ocupa el puesto.
      *
-     * @return El vehículo que ocupa el puesto.
+     * @return El vehículo que ocupa el puesto, o null si está vacío.
      */
     public Vehiculo getVehiculo() {
         return vehiculo;
     }
 }
-

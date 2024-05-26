@@ -19,7 +19,6 @@ public class Parqueadero {
     private double totalRecaudadoDiario;
     // Total recaudado mensual.
     private double totalRecaudadoMensual;
-    
 
     /**
      * Constructor de la clase Parqueadero.
@@ -284,16 +283,4 @@ public class Parqueadero {
         System.out.println("Total recaudado: " + totalRecaudadoMensual);
         totalRecaudadoMensual = 0; // Reset mensual
     }
-
-    public double getTarifa(Puesto vehiculo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTarifa'");
-    }
-
-    public void actualizarTotalRecaudado(int tiempoSimulado) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actualizarTotalRecaudado'");
-    }
-
-
 }
